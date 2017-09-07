@@ -187,3 +187,4 @@ FakesAssemblies/
 # Coverity intermediate directory and archives
 /cov-int/
 cov-int-*
+*.userprefs
