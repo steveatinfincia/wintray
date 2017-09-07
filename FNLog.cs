@@ -1,7 +1,7 @@
 ﻿using FreenetTray.Properties;
-using NLog;
-using NLog.Config;
-using NLog.Targets;
+//using NLog;
+//using NLog.Config;
+//using NLog.Targets;
 using System;
 
 
@@ -19,51 +19,51 @@ namespace FreenetTray {
          */
         public const string LogTargetName = "logFile";
 
-        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
+        //private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         public static void Initialize() {
 
-            var config = new LoggingConfiguration();
-            var target = new FileTarget {FileName = "${basedir}/FreenetTray.log"};
-            config.AddTarget(LogTargetName, target);
-            var rule = new LoggingRule("*", LogLevel.FromString(Settings.Default.LogLevel), target);
-            config.LoggingRules.Add(rule);
-            LogManager.Configuration = config;
+            //var config = new LoggingConfiguration();
+            //var target = new FileTarget {FileName = "${basedir}/FreenetTray.log"};
+            //config.AddTarget(LogTargetName, target);
+            //var rule = new LoggingRule("*", LogLevel.FromString(Settings.Default.LogLevel), target);
+            //config.LoggingRules.Add(rule);
+            //LogManager.Configuration = config;
         }
 
         public static void Debug(string format, params object[] args) {
             string f = "[Debug] " + format;
             string line = string.Format(f, args);
             System.Diagnostics.Debug.WriteLine(line);
-            Log.Info(format, args);
+            //Log.Info(format, args);
         }
 
         public static void Info(string format, params object[] args) {
             string f = "[Info] " + format;
             string line = string.Format(f, args);
             System.Diagnostics.Debug.WriteLine(line);
-            Log.Info(format, args);
+            //Log.Info(format, args);
         }
 
         public static void Warn(string format, params object[] args) {
             string f = "[Warn] " + format;
             string line = string.Format(f, args);
             System.Diagnostics.Debug.WriteLine(line);
-            Log.Warn(format, args);
+            //Log.Warn(format, args);
         }
 
         public static void Error(string format, params object[] args) {
             string f = "[Error] " + format;
             string line = string.Format(f, args);
             System.Diagnostics.Debug.WriteLine(line);
-            Log.Error(format, args);
+            //Log.Error(format, args);
         }
 
         public static void ErrorException(Exception ex, string format, params object[] args) {
             string f = "[Error] " + format;
             string line = string.Format(f, args);
             System.Diagnostics.Debug.WriteLine(line);
-            Log.Log(LogLevel.Error, ex, format, args);
+            //Log.Log(LogLevel.Error, ex, format, args);
         }
     }
 }
