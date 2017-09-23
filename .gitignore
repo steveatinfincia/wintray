@@ -188,3 +188,4 @@ FakesAssemblies/
 /cov-int/
 cov-int-*
 *.userprefs
+CocoaPods/Pods
