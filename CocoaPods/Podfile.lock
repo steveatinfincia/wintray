@@ -1,0 +1,18 @@
+PODS:
+  - FontAwesomeIconFactory (2.1.1)
+  - LetsMove (1.23)
+  - Sparkle (1.18.1)
+
+DEPENDENCIES:
+  - FontAwesomeIconFactory
+  - LetsMove
+  - Sparkle
+
+SPEC CHECKSUMS:
+  FontAwesomeIconFactory: bb9ce26d3dd13044854a82d380023c8e7d3ebf1a
+  LetsMove: aab040c9d4ca98cdf60a9b13f89146a94031f8ce
+  Sparkle: 06ea33170007c5937ee54da481b4481af98fac79
+
+PODFILE CHECKSUM: 858cf2c7fcab8ebeadc2d891d33d4f28b91fdb62
+
+COCOAPODS: 1.3.1

@@ -1,0 +1,8 @@
+platform :osx, '10.9'
+install! 'cocoapods', :integrate_targets => false
+target 'ObjectiveSharpieIntegration' do
+  use_frameworks!
+end
+pod 'FontAwesomeIconFactory'
+pod 'LetsMove'
+pod 'Sparkle'
