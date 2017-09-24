@@ -34,6 +34,7 @@ namespace Common {
 
         public static event EventHandler<FindNodeLocationEventArgs> FindNodeLocationEvent;
         public static event EventHandler<NodeLocationFoundEventArgs> NodeLocationFoundEvent;
+        public static event EventHandler<NodeLocationNotFoundEventArgs> NodeLocationNotFoundEvent;
 
 
         #endregion
@@ -122,6 +123,10 @@ namespace Common {
 
         public static void NodeLocationFound(NodeLocationFoundEventArgs args) {
             DispatchEvent(NodeLocationFoundEvent, args);
+        }
+
+        public static void NodeLocationNotFound(NodeLocationNotFoundEventArgs args) {
+            DispatchEvent(NodeLocationNotFoundEvent, args);
         }
     }
 }

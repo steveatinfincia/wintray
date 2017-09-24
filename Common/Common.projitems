@@ -33,5 +33,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)NodeLocationFoundEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ShowDownloadsEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Browser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NodeLocationNotFoundEventArgs.cs" />
   </ItemGroup>
 </Project>
