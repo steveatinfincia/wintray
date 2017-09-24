@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{4C6AB7B1-AB35-43C8-AD90-757A7E0276E4}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Common</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)NodeStateRunningEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NodeStateNotRunningEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NodeStateUnknownEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventRouter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NodeHelloEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NodeDataEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InstallFailedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InstallFinishedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StartNodeEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StopNodeEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShowFProxyEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShowSettingsEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShowAboutEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FreenetNodeConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gist.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NodeConfiguredEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DesktopNotificationEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FindNodeLocationEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShowInstallerEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShowUninstallerEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NodeLocationFoundEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShowDownloadsEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Browser.cs" />
+  </ItemGroup>
+</Project>

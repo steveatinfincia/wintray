@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinTray", "WinTray.csproj", "{E4F85BC4-5FC2-4166-8F79-1AC71A7CB1E4}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Common", "Common\Common.shproj", "{4C6AB7B1-AB35-43C8-AD90-757A7E0276E4}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocoaPods", "CocoaPods\CocoaPods.csproj", "{5ACDB52E-FB34-4EF2-BA23-530C5E3719AF}"
 EndProject
 Global
