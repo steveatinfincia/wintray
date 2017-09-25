@@ -9,7 +9,6 @@ namespace Common {
         #region Events
         public static event EventHandler<NodeStateRunningEventArgs> NodeStateRunningEvent;
         public static event EventHandler<NodeStateNotRunningEventArgs> NodeStateNotRunningEvent;
-        public static event EventHandler<NodeStateUnknownEventArgs> NodeStateUnknownEvent;
 
         public static event EventHandler<NodeDataEventArgs> NodeDataEvent;
         public static event EventHandler<NodeHelloEventArgs> NodeHelloEvent;
@@ -55,10 +54,6 @@ namespace Common {
 
         public static void NodeStateNotRunning(NodeStateNotRunningEventArgs args) {
             DispatchEvent(NodeStateNotRunningEvent, args);
-        }
-
-        public static void NodeStateUnknown(NodeStateUnknownEventArgs args) {
-            DispatchEvent(NodeStateUnknownEvent, args);
         }
 
         public static void NodeHello(NodeHelloEventArgs args) {

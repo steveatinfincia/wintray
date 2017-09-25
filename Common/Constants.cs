@@ -52,7 +52,6 @@ namespace Common {
         // MARK: - Node state
 
         public enum FNNodeState {
-            unknown = -1,
             notRunning = 0,
             running = 1,
         }
