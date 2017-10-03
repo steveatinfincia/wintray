@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="InstallerDestinationViewController" customModule="MacTray">
+            <connections>
+                <outlet property="installPathIndicator" destination="sRB-6Y-xoY" id="mBy-Qr-dbb"/>
+                <outlet property="view" destination="aNl-RT-p8W" id="hAJ-WD-D5I"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView canDrawConcurrently="YES" id="aNl-RT-p8W" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="620" height="302"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bp9-cF-k9G">
+                    <rect key="frame" x="16" y="274" width="586" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Where do you want to install Freenet?" id="voQ-z0-pMI">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <attributedString key="userComments">
+                            <fragment content="Window title">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </textFieldCell>
+                </textField>
+                <box borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="I5m-6g-e3K">
+                    <rect key="frame" x="17" y="-4" width="586" height="286"/>
+                    <view key="contentView" id="1Ij-qV-M8I">
+                        <rect key="frame" x="1" y="1" width="584" height="270"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nGe-5Y-yAU">
+                                <rect key="frame" x="14" y="13" width="182" height="32"/>
+                                <buttonCell key="cell" type="push" title="Change Install Location" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yd7-Xj-YrX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <attributedString key="userComments">
+                                        <fragment content="Button title">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="smallSystem"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="selectInstallLocation:" target="-2" id="mqV-Nv-08N"/>
+                                </connections>
+                            </button>
+                            <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sRB-6Y-xoY">
+                                <rect key="frame" x="20" y="61" width="546" height="22"/>
+                                <pathCell key="cell" selectable="YES" refusesFirstResponder="YES" alignment="left" placeholderString="" id="TE3-62-sEw">
+                                    <font key="font" metaFont="system"/>
+                                    <url key="url" string="file:///Library/Application%20Support/Freenet"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                </pathCell>
+                            </pathControl>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8va-aW-Mki">
+                                <rect key="frame" x="16" y="91" width="552" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="whk-ba-ujF"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="The default location is recommended for most users" id="AJD-SM-aWC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <constraints>
+                        <constraint firstItem="8va-aW-Mki" firstAttribute="leading" secondItem="I5m-6g-e3K" secondAttribute="leading" constant="16" id="BIB-X3-tyP"/>
+                        <constraint firstItem="nGe-5Y-yAU" firstAttribute="top" secondItem="sRB-6Y-xoY" secondAttribute="bottom" constant="20" symbolic="YES" id="OYX-Qs-WnL"/>
+                        <constraint firstAttribute="trailing" secondItem="sRB-6Y-xoY" secondAttribute="trailing" constant="16" id="P42-xD-21Y"/>
+                        <constraint firstItem="sRB-6Y-xoY" firstAttribute="top" secondItem="8va-aW-Mki" secondAttribute="bottom" constant="8" symbolic="YES" id="QD2-hm-PCs"/>
+                        <constraint firstItem="nGe-5Y-yAU" firstAttribute="leading" secondItem="I5m-6g-e3K" secondAttribute="leading" constant="18" id="ZPM-Yg-GFs"/>
+                        <constraint firstItem="sRB-6Y-xoY" firstAttribute="leading" secondItem="nGe-5Y-yAU" secondAttribute="leading" id="jU8-vr-1VK"/>
+                        <constraint firstAttribute="bottom" secondItem="nGe-5Y-yAU" secondAttribute="bottom" constant="17" id="mqb-r0-EZq"/>
+                        <constraint firstItem="8va-aW-Mki" firstAttribute="trailing" secondItem="sRB-6Y-xoY" secondAttribute="trailing" id="pwe-Ji-Hxu"/>
+                    </constraints>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="I5m-6g-e3K" secondAttribute="trailing" constant="20" symbolic="YES" id="GLc-2p-h2s"/>
+                <constraint firstItem="Bp9-cF-k9G" firstAttribute="leading" secondItem="aNl-RT-p8W" secondAttribute="leading" constant="18" id="VTa-fZ-BYb"/>
+                <constraint firstItem="I5m-6g-e3K" firstAttribute="trailing" secondItem="Bp9-cF-k9G" secondAttribute="trailing" id="X9y-1h-FjW"/>
+                <constraint firstItem="I5m-6g-e3K" firstAttribute="leading" secondItem="aNl-RT-p8W" secondAttribute="leading" constant="20" symbolic="YES" id="b6A-3V-unx"/>
+                <constraint firstAttribute="bottom" secondItem="I5m-6g-e3K" secondAttribute="bottom" id="duj-vw-EN7"/>
+                <constraint firstItem="Bp9-cF-k9G" firstAttribute="top" secondItem="aNl-RT-p8W" secondAttribute="top" constant="11" id="lBx-38-NDp"/>
+                <constraint firstItem="I5m-6g-e3K" firstAttribute="top" secondItem="aNl-RT-p8W" secondAttribute="top" constant="20" symbolic="YES" id="pPM-Ti-ix3"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

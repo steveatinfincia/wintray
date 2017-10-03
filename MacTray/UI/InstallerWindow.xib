@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="InstallerWindowController" customModule="MacTray">
+            <connections>
+                <outlet property="backButton" destination="PBl-NC-C8r" id="x5x-T0-7NJ"/>
+                <outlet property="installationProgressIndicator" destination="uL8-lP-ASQ" id="Qji-AA-ASt"/>
+                <outlet property="nextButton" destination="jLF-SX-MeS" id="Fkk-De-5lE"/>
+                <outlet property="pageController" destination="et5-sg-juY" id="LhO-dg-kzR"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="75a-7r-0Mi"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Install Freenet" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="620" height="416"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="620" height="416"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jLF-SX-MeS">
+                        <rect key="frame" x="511" y="13" width="95" height="32"/>
+                        <buttonCell key="cell" type="push" title="Continue" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="28s-Ha-tdi">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Button title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </buttonCell>
+                        <connections>
+                            <action selector="next:" target="-2" id="6f6-dw-EzR"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PBl-NC-C8r">
+                        <rect key="frame" x="420" y="13" width="91" height="32"/>
+                        <buttonCell key="cell" type="push" title="Go Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RQg-ip-faV">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Button title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </buttonCell>
+                        <connections>
+                            <action selector="previous:" target="-2" id="dZx-gd-A4r"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AIk-RP-ExT">
+                        <rect key="frame" x="18" y="17" width="25" height="25"/>
+                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7yc-NA-gms">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="afp-l7-WFd">
+                        <rect key="frame" x="0.0" y="113" width="620" height="302"/>
+                    </customView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-ea-wJ9">
+                        <rect key="frame" x="20" y="53" width="417" height="52"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="417" id="xd5-OA-S0F"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="bottomLeft" image="installer_background" id="mOf-xz-VRx"/>
+                    </imageView>
+                    <progressIndicator wantsLayer="YES" maxValue="5" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="uL8-lP-ASQ">
+                        <rect key="frame" x="53" y="20" width="365" height="20"/>
+                    </progressIndicator>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="i0a-ea-wJ9" firstAttribute="top" secondItem="afp-l7-WFd" secondAttribute="bottom" constant="8" symbolic="YES" id="14n-AF-JmZ"/>
+                    <constraint firstItem="AIk-RP-ExT" firstAttribute="top" secondItem="afp-l7-WFd" secondAttribute="bottom" constant="72" id="17t-7J-wM9"/>
+                    <constraint firstItem="AIk-RP-ExT" firstAttribute="top" secondItem="PBl-NC-C8r" secondAttribute="top" id="3Hw-3T-Shx"/>
+                    <constraint firstItem="AIk-RP-ExT" firstAttribute="top" secondItem="i0a-ea-wJ9" secondAttribute="bottom" constant="12" symbolic="YES" id="6ea-bg-ofx"/>
+                    <constraint firstItem="uL8-lP-ASQ" firstAttribute="centerY" secondItem="AIk-RP-ExT" secondAttribute="centerY" id="9Dx-jk-e94"/>
+                    <constraint firstAttribute="trailing" secondItem="jLF-SX-MeS" secondAttribute="trailing" constant="20" symbolic="YES" id="Eso-uv-FIq"/>
+                    <constraint firstAttribute="trailing" secondItem="afp-l7-WFd" secondAttribute="trailing" id="GBb-7m-fB4"/>
+                    <constraint firstItem="afp-l7-WFd" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="1" id="Yur-VA-ydV"/>
+                    <constraint firstItem="uL8-lP-ASQ" firstAttribute="leading" secondItem="AIk-RP-ExT" secondAttribute="trailing" constant="12" symbolic="YES" id="dAe-QI-X5o"/>
+                    <constraint firstItem="afp-l7-WFd" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="hk7-US-3PY"/>
+                    <constraint firstItem="PBl-NC-C8r" firstAttribute="baseline" secondItem="jLF-SX-MeS" secondAttribute="baseline" id="jI8-S4-j0d"/>
+                    <constraint firstItem="AIk-RP-ExT" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="lRv-xB-kJm"/>
+                    <constraint firstItem="PBl-NC-C8r" firstAttribute="leading" secondItem="uL8-lP-ASQ" secondAttribute="trailing" constant="8" symbolic="YES" id="s3t-YN-55f"/>
+                    <constraint firstItem="jLF-SX-MeS" firstAttribute="leading" secondItem="PBl-NC-C8r" secondAttribute="trailing" constant="12" symbolic="YES" id="w01-e8-fCy"/>
+                    <constraint firstAttribute="bottom" secondItem="AIk-RP-ExT" secondAttribute="bottom" constant="20" symbolic="YES" id="yn5-aS-vgd"/>
+                    <constraint firstItem="i0a-ea-wJ9" firstAttribute="leading" secondItem="AIk-RP-ExT" secondAttribute="leading" id="ze6-Q9-vYA"/>
+                </constraints>
+            </view>
+            <attributedString key="userComments">
+                <fragment content="Window title">
+                    <attributes>
+                        <font key="NSFont" size="11" name="HelveticaNeue"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                    </attributes>
+                </fragment>
+            </attributedString>
+            <connections>
+                <outlet property="delegate" destination="-2" id="O1I-wP-cWR"/>
+            </connections>
+            <point key="canvasLocation" x="232" y="360"/>
+        </window>
+        <pagecontroller transitionStyle="horizontalStrip" id="et5-sg-juY" userLabel="Installation Page Controller">
+            <connections>
+                <outlet property="view" destination="afp-l7-WFd" id="Nib-SK-iPo"/>
+            </connections>
+        </pagecontroller>
+    </objects>
+    <resources>
+        <image name="installer_background" width="414" height="51"/>
+    </resources>
+</document>

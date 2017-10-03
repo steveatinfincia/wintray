@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="InstallerProgressViewController" customModule="MacTray">
+            <connections>
+                <outlet property="configurationStatus" destination="3mN-3s-lrL" id="j1K-YK-AfM"/>
+                <outlet property="configurationTitle" destination="gde-V4-T93" id="EsU-hP-HjG"/>
+                <outlet property="fileCopyStatus" destination="57l-8B-WxW" id="uFw-ER-Zdt"/>
+                <outlet property="fileCopyTitle" destination="6dy-wR-EJS" id="Uy1-Q2-DS5"/>
+                <outlet property="finishedStatus" destination="pIX-vV-EW5" id="DN5-if-YFV"/>
+                <outlet property="finishedTitle" destination="ziN-HG-Bnt" id="2OX-Zx-OhB"/>
+                <outlet property="javaInstallationStatus" destination="OB0-za-RXI" id="ngi-WW-ywi"/>
+                <outlet property="javaInstallationTitle" destination="pqY-dX-n1S" id="hUg-B7-b58"/>
+                <outlet property="startNodeStatus" destination="gSx-sB-O2x" id="L1x-bs-zH1"/>
+                <outlet property="startNodeTitle" destination="bhy-1K-wNe" id="m22-ue-K22"/>
+                <outlet property="view" destination="njg-Ho-2iZ" id="A13-Ph-YNH"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView canDrawConcurrently="YES" id="njg-Ho-2iZ" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="620" height="302"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V9k-J0-MT6">
+                    <rect key="frame" x="16" y="274" width="586" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Installing Freenet" id="95e-76-m1K">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <attributedString key="userComments">
+                            <fragment content="Window title">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </textFieldCell>
+                </textField>
+                <box autoresizesSubviews="NO" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="TJB-rn-K6R">
+                    <rect key="frame" x="17" y="-4" width="586" height="286"/>
+                    <view key="contentView" id="6GZ-Gl-C4m">
+                        <rect key="frame" x="1" y="1" width="584" height="270"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pqY-dX-n1S">
+                                <rect key="frame" x="54" y="221" width="530" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="526" id="n0w-iL-WU3"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Installing Java" id="Hga-mV-cuv">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OB0-za-RXI" customClass="NIKFontAwesomeImageView">
+                                <rect key="frame" x="31" y="221" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="1cH-fZ-5h2"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="dHD-Qk-E44"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="edgeInsetTop">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="57l-8B-WxW" customClass="NIKFontAwesomeImageView">
+                                <rect key="frame" x="31" y="183" width="17" height="17"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="ozu-kN-NgY"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="edgeInsetTop">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-wR-EJS">
+                                <rect key="frame" x="54" y="183" width="530" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Copying Files" id="pT7-X7-u4Z">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3mN-3s-lrL" customClass="NIKFontAwesomeImageView">
+                                <rect key="frame" x="31" y="144" width="17" height="17"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="mdx-h7-q95"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="edgeInsetTop">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gSx-sB-O2x" customClass="NIKFontAwesomeImageView">
+                                <rect key="frame" x="31" y="104" width="17" height="17"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="z1j-xN-hhf"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="edgeInsetTop">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pIX-vV-EW5" customClass="NIKFontAwesomeImageView">
+                                <rect key="frame" x="31" y="65" width="17" height="17"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="xKm-VJ-fa1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="edgeInsetTop">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bhy-1K-wNe">
+                                <rect key="frame" x="54" y="104" width="530" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Starting Node..." id="ToQ-oU-rUc">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ziN-HG-Bnt">
+                                <rect key="frame" x="54" y="65" width="530" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Finished, please click Continue" id="RGl-Cl-cH4">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gde-V4-T93" userLabel="Configuration Title">
+                                <rect key="frame" x="54" y="144" width="530" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Configuring Node" id="cov-1I-ShA" userLabel="Configuring Node">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <constraints>
+                        <constraint firstItem="pIX-vV-EW5" firstAttribute="leading" secondItem="gSx-sB-O2x" secondAttribute="leading" id="2Ze-GJ-c6m"/>
+                        <constraint firstItem="gde-V4-T93" firstAttribute="trailing" secondItem="bhy-1K-wNe" secondAttribute="trailing" id="404-5P-ouC"/>
+                        <constraint firstAttribute="bottom" secondItem="gSx-sB-O2x" secondAttribute="bottom" constant="101" id="5Vv-1h-VAL"/>
+                        <constraint firstAttribute="trailing" secondItem="pqY-dX-n1S" secondAttribute="trailing" id="9dW-V6-Vjp"/>
+                        <constraint firstItem="pIX-vV-EW5" firstAttribute="bottom" secondItem="ziN-HG-Bnt" secondAttribute="bottom" id="A3u-nj-CKn"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="top" secondItem="6dy-wR-EJS" secondAttribute="top" id="Aup-eG-3Ce"/>
+                        <constraint firstItem="6dy-wR-EJS" firstAttribute="trailing" secondItem="gde-V4-T93" secondAttribute="trailing" id="CvA-Lj-o2e"/>
+                        <constraint firstItem="3mN-3s-lrL" firstAttribute="top" secondItem="gde-V4-T93" secondAttribute="top" id="FBI-Ou-wFN"/>
+                        <constraint firstItem="pqY-dX-n1S" firstAttribute="leading" secondItem="OB0-za-RXI" secondAttribute="trailing" constant="8" symbolic="YES" id="GMd-NH-szb"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="leading" secondItem="OB0-za-RXI" secondAttribute="leading" id="Hjm-8V-c4g"/>
+                        <constraint firstItem="OB0-za-RXI" firstAttribute="leading" secondItem="TJB-rn-K6R" secondAttribute="leading" constant="29" id="JlB-EP-gWu"/>
+                        <constraint firstItem="pIX-vV-EW5" firstAttribute="top" secondItem="gSx-sB-O2x" secondAttribute="bottom" constant="22" id="Ok7-gb-WR5"/>
+                        <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="trailing" constant="8" symbolic="YES" id="PRY-hx-NHh"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="top" secondItem="OB0-za-RXI" secondAttribute="bottom" constant="21" id="QGH-nY-GBu"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="trailing" secondItem="bhy-1K-wNe" secondAttribute="trailing" id="R1Z-cM-729"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="leading" id="WzX-GO-KKH"/>
+                        <constraint firstItem="bhy-1K-wNe" firstAttribute="leading" secondItem="gSx-sB-O2x" secondAttribute="trailing" constant="8" symbolic="YES" id="Xmr-1c-Q47"/>
+                        <constraint firstItem="6dy-wR-EJS" firstAttribute="leading" secondItem="pqY-dX-n1S" secondAttribute="leading" id="ZfJ-Tz-BdI"/>
+                        <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="bhy-1K-wNe" secondAttribute="leading" id="axa-2Y-E6V"/>
+                        <constraint firstItem="3mN-3s-lrL" firstAttribute="bottom" secondItem="gde-V4-T93" secondAttribute="bottom" id="b9X-9K-yE8"/>
+                        <constraint firstItem="gSx-sB-O2x" firstAttribute="top" secondItem="3mN-3s-lrL" secondAttribute="bottom" constant="23" id="cnU-oz-0IM"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="top" secondItem="pIX-vV-EW5" secondAttribute="top" id="dVS-cn-e8Q"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="bottom" secondItem="6dy-wR-EJS" secondAttribute="bottom" id="dzn-Xl-2YP"/>
+                        <constraint firstItem="OB0-za-RXI" firstAttribute="top" secondItem="TJB-rn-K6R" secondAttribute="top" constant="47" id="ev8-5u-VdZ"/>
+                        <constraint firstItem="6dy-wR-EJS" firstAttribute="leading" secondItem="57l-8B-WxW" secondAttribute="trailing" constant="8" symbolic="YES" id="fuV-0W-2E7"/>
+                        <constraint firstItem="OB0-za-RXI" firstAttribute="bottom" secondItem="pqY-dX-n1S" secondAttribute="bottom" id="la3-Ol-qg5"/>
+                        <constraint firstItem="pqY-dX-n1S" firstAttribute="top" secondItem="OB0-za-RXI" secondAttribute="top" id="lla-dT-sDZ"/>
+                        <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="6dy-wR-EJS" secondAttribute="leading" id="mTI-XX-DIQ"/>
+                        <constraint firstItem="gSx-sB-O2x" firstAttribute="top" secondItem="bhy-1K-wNe" secondAttribute="top" id="p1O-EW-SDc"/>
+                        <constraint firstItem="gSx-sB-O2x" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="leading" id="qqk-gE-LNo"/>
+                        <constraint firstItem="bhy-1K-wNe" firstAttribute="bottom" secondItem="gSx-sB-O2x" secondAttribute="bottom" id="s1I-40-dZ4"/>
+                        <constraint firstItem="3mN-3s-lrL" firstAttribute="top" secondItem="57l-8B-WxW" secondAttribute="bottom" constant="22" id="t5g-b3-1ne"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="leading" secondItem="bhy-1K-wNe" secondAttribute="leading" id="v8D-j5-fRz"/>
+                        <constraint firstItem="6dy-wR-EJS" firstAttribute="trailing" secondItem="pqY-dX-n1S" secondAttribute="trailing" id="y3J-Oz-uao"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="leading" secondItem="pIX-vV-EW5" secondAttribute="trailing" constant="8" symbolic="YES" id="zkD-ww-rwJ"/>
+                    </constraints>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="TJB-rn-K6R" firstAttribute="trailing" secondItem="V9k-J0-MT6" secondAttribute="trailing" id="2PN-eR-IkK"/>
+                <constraint firstItem="V9k-J0-MT6" firstAttribute="top" secondItem="njg-Ho-2iZ" secondAttribute="top" constant="11" id="2fh-Nn-aRp"/>
+                <constraint firstItem="V9k-J0-MT6" firstAttribute="leading" secondItem="njg-Ho-2iZ" secondAttribute="leading" constant="18" id="7UL-C1-xz1"/>
+                <constraint firstItem="TJB-rn-K6R" firstAttribute="top" secondItem="njg-Ho-2iZ" secondAttribute="top" constant="20" symbolic="YES" id="G9s-aA-rO2"/>
+                <constraint firstItem="TJB-rn-K6R" firstAttribute="leading" secondItem="njg-Ho-2iZ" secondAttribute="leading" constant="20" symbolic="YES" id="Z4c-kf-5MO"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

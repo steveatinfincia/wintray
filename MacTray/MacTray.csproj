@@ -1,0 +1,162 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\Common\Common.projitems" Label="Shared" Condition="Exists('..\Common\Common.projitems')" />
+  <Import Project="..\fcp2lib.NET\FCP2lib\fcp2lib.Shared.projitems" Label="Shared" Condition="Exists('..\fcp2lib.NET\FCP2lib\fcp2lib.Shared.projitems')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05EC7D93-DC95-4F38-9F13-B4EAC7B8EFE8}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MacTray</RootNamespace>
+    <AssemblyName>Freenet Tray</AssemblyName>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <UseXamMacFullFramework>true</UseXamMacFullFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode></LinkMode>
+    <XamMacArch></XamMacArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <CreatePackage>true</CreatePackage>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <LinkMode>None</LinkMode>
+    <HttpClientHandler></HttpClientHandler>
+    <XamMacArch></XamMacArch>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Markdig">
+      <HintPath>..\packages\Markdig.0.13.3\lib\net40\Markdig.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Web.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appIcon.png" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Dropdown.cs" />
+    <Compile Include="FreenetNode.cs" />
+    <Compile Include="SettingsWindowController.cs" />
+    <Compile Include="InstallerWindowController.cs" />
+    <Compile Include="MacHelpers.cs" />
+    <Compile Include="InstallerDestinationViewControllerController.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="InstallerProgressViewController.cs" />
+    <Compile Include="AboutWindowControllerController.cs" />
+    <Compile Include="AboutWindowControllerController.designer.cs">
+      <DependentUpon>AboutWindowControllerController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstallerWindowController.designer.cs">
+      <DependentUpon>InstallerWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Installer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\highlightedIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\notRunningIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\runningIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\license.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\installer_background.png" />
+    <BundleResource Include="Resources\Bundled Node\README.txt" />
+    <BundleResource Include="Resources\Bundled Node\bcprov-jdk15on-154.jar" />
+    <BundleResource Include="Resources\Bundled Node\freenet-ext.jar" />
+    <BundleResource Include="Resources\Bundled Node\freenet-stable-latest.jar" />
+    <BundleResource Include="Resources\Bundled Node\run.sh" />
+    <BundleResource Include="Resources\Bundled Node\seednodes.fref" />
+    <BundleResource Include="Resources\Bundled Node\sha1test.jar" />
+    <BundleResource Include="Resources\Bundled Node\startssl.pem" />
+    <BundleResource Include="Resources\Bundled Node\update.sh" />
+    <BundleResource Include="Resources\Bundled Node\update.sh.sha1" />
+    <BundleResource Include="Resources\Bundled Node\wrapper.conf" />
+    <BundleResource Include="Resources\Bundled Node\wrapper.jar" />
+    <BundleResource Include="Resources\Bundled Node\bin\setup.sh" />
+    <BundleResource Include="Resources\Bundled Node\bin\wrapper-macosx-universal-32" />
+    <BundleResource Include="Resources\Bundled Node\bin\wrapper-macosx-universal-64" />
+    <BundleResource Include="Resources\Bundled Node\lib\libwrapper-macosx-universal-32.jnilib" />
+    <BundleResource Include="Resources\Bundled Node\lib\libwrapper-macosx-universal-64.jnilib" />
+    <BundleResource Include="Resources\Bundled Node\licenses\LICENSE.Freenet" />
+    <BundleResource Include="Resources\Bundled Node\licenses\LICENSE.Mantissa" />
+    <BundleResource Include="Resources\Bundled Node\plugins\JSTUN.jar" />
+    <BundleResource Include="Resources\Bundled Node\plugins\KeyUtils.jar" />
+    <BundleResource Include="Resources\Bundled Node\plugins\Library.jar" />
+    <BundleResource Include="Resources\Bundled Node\plugins\Sharesite.jar" />
+    <BundleResource Include="Resources\Bundled Node\plugins\ThawIndexBrowser.jar" />
+    <BundleResource Include="Resources\Bundled Node\plugins\UPnP.jar" />
+    <BundleResource Include="Resources\Bundled Packages\jre-9_osx-x64_bin.dmg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
+    <Folder Include="Resources\Bundled Packages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="UI\InstallerDestinationView.xib" />
+    <InterfaceDefinition Include="UI\InstallerProgressView.xib" />
+    <InterfaceDefinition Include="UI\InstallerWindow.xib" />
+    <InterfaceDefinition Include="UI\SettingsWindow.xib" />
+    <InterfaceDefinition Include="UI\AboutWindow.xib" />
+    <InterfaceDefinition Include="UI\MainMenu.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CocoaPods\CocoaPods.csproj">
+      <Project>{5ACDB52E-FB34-4EF2-BA23-530C5E3719AF}</Project>
+      <Name>CocoaPods</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>
